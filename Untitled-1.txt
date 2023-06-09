@@ -1,0 +1,56 @@
+
+function getData( pElementos){ 
+    vElements   = pElementos;
+    data = [];
+
+    for(i=0; i<vElements.length; i++){
+        key = vElements[i].idsubstr(3,45);;
+        val = vElements[i].value; 
+        Object.assign(ob, {[key]: val});
+ 
+    }
+    console.log(ob);
+
+}
+
+
+function getUsuario(){
+    objReturn = {
+        "correo":"", "nombres":"", "apellidos":""
+    };  
+ 
+     return objReturn; 
+ }
+
+
+function getData( pElementos){ 
+    vElements   = pElementos;
+    data = []; ob = {};
+
+    for(i=0; i<vElements.length; i++){
+        key = vElements[i].name;
+        val = vElements[i].value; 
+        Object.assign(ob, {[key]: val});
+ 
+    }
+    console.log(ob);
+    return ob; 
+}
+
+x['txtcorreo'].value = y['correo']
+
+function setItems( x ){
+    //x = document.getElementsByClassName('form-item');
+    y = getData(x); 
+
+    for(i = 0; i<x.length; i++){
+        console.log( x[i].id );
+
+        console.log(  y[ x[i].name ] )
+
+        $('#'+x[i].id+'').val( y[ x[i].name ] )
+
+        //x[ x[i].id ].value = y[ x[i].name ]
+    } 
+
+}
